@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercise 1</title>
+    <style>
+        
+        .active {
+            background-color: yellow;
+            color: red;
+            background-color: lightblue;
+            margin-bottom: 10px;
+        }
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            margin-top: 20px;
+        }
+        .box:hover {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(0, 255, 183);
+            line-height: 200px;
+            font-size: 18px;
+
+            
+        }
+        </style>
+
+</head>
+<body>
+
+    <h1 id="myHeading">Welcome</h1>
+
+    <button onclick="changeText()">Click Me</button>
+
+    <P id="p1">this is the first paragraph 1</P>
+    <p id="p2"> this is the second paragraph 2 </p>
+    <p id="p3"> this is the third paragraph 3 </p>
+
+    <div class="box" id="myBox">this is the div class </div>
+    <button onclick="addClass()">Active class</button>
+    
+<br>
+    <button onclick="showAlert()">Show Alert</button>
+
+<br>
+<div class="box" id="myDive">Hover Over Me </div>
+<br>
+
+<label for="textInput">type somthing:</label>
+<input type = "text" id ="textinput" placeholder=" typiny">
+<p id="Show"></p>
+
+    <script>
+        function changeText() {
+            document.getElementById("myHeading").innerText = "JavaScript is powerful!";
+        }
+        //exercise 2
+        let p1 = document.getElementById('p1');
+        p1.style.color = 'red';
+        let p2 = document.getElementById('p2');
+        p2.style.color = 'blue';
+        let p3 = document.getElementById('p3');
+        p3.style.color = 'green';
+
+        //exercise 3
+        
+        function addClass() {
+            document.getElementById("myBox").classList.add("active");
+        }
+        //exercise 4
+        function showAlert(){
+            alert("Button clicked!");
+        }
+
+        //exercise 5
+        let  divElement = document.getElementById('myDive');
+        divElement.addEventListener('mouseover',function(){
+        divElement.style.backgroundColor = 'red';
+        });
+       divElement.addEventListener('mouseout',function(){
+        divElement.style.backgroundColor = 'blue';
+       })
+        
+//exercise 6
+        let textInput = document.getElementById('textinput');
+        let showParagraph = document.getElementById('Show');
+
+        textInput.addEventListener('input', function() {
+            showParagraph.innerText = textInput.value;
+        });
+
+    </script>
+
